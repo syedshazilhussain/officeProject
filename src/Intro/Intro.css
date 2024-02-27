@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.intro__header {
+    margin-top: 6.2rem;
+    height: 100%;
+    width: 100%;
+}

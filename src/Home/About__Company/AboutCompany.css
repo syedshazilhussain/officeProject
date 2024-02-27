@@ -1,0 +1,1054 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about__campany {
+    margin-top: 3rem;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__campany__cantainer {
+    height: 130vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.about__campany__inner {
+    height: 110vh;
+    width: 50vw;
+    padding: 1.3rem;
+}
+
+.about__campany__inner2 {
+    height: 110vh;
+    width: 50vw;
+    padding: 1.3rem;
+}
+
+.underline__box {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.underline__box h3 {
+    margin-left: 1rem;
+    font-size: 1.2em;
+    color: #3B38EB;
+}
+
+.underline {
+    height: 0.6vh;
+    width: 3vw;
+    background-color: #3B38EB;
+    transform-origin: left;
+    border-radius: 30%;
+    animation: underlines .9s ease infinite alternate;
+}
+
+@keyframes underlines {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+.about__campany__inner h1 {
+    font-size: 2.6em;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.about__campany__inner h1 span {
+    color: #3B38EB;
+}
+
+.about__campany__inner p {
+    font-weight: 400;
+    font-family: sans-serif;
+    color: rgb(112, 111, 111);
+    margin-top: 2rem;
+}
+
+.Team {
+    height: 47vh;
+    display: flex;
+    gap: 1em;
+    margin-top: 2rem;
+}
+
+.team__img__box img {
+    height: 30vh;
+    width: 16vw;
+}
+
+.team__cantainer {
+    height: 46.5vh;
+    width: 22vw;
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.team__content {
+    height: 17.5vh;
+    width: 21vw;
+    padding: 0em 1em;
+}
+
+.team__content h4 {
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.team__content p {
+    font-size: 1em;
+    font-weight: 600;
+    color: rgb(112, 111, 111);
+    margin-top: 1em;
+}
+
+.team__content2 {
+    height: 25vh;
+    width: 21vw;
+    padding: 0em 1em;
+}
+
+.team__content2 h4 {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.team__content2 p {
+    font-size: 1em;
+    font-weight: 600;
+    color: rgb(112, 111, 111);
+    margin-top: 1em;
+}
+
+.about__campany__right__img {
+    width: 40vw;
+    height: 100vh;
+    position: relative;
+}
+
+.about__campany__right__img .about2__img2 {
+    width: 40vw;
+    height: 100vh;
+    position: relative;
+}
+
+.about__campany__right__img .about2__img3 {
+    position: absolute;
+    bottom: 2.5em;
+    left: 12em;
+}
+
+.skill__bars {
+    height: 30vh;
+    width: 39vw;
+    padding: 25px 30px;
+}
+
+.skill__bars .bar {
+    margin: 20px 0;
+}
+
+.skill__bars .bar:first-child {
+    margin-top: 0px;
+}
+
+.skill__bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.skill__bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+.skill__bars .bar .progress__line {
+    position: relative;
+    height: 2vh;
+    width: 34vw;
+    background: #ebe8e8;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 1px rgba(255, 255, 255, 0.8);
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress__line span {
+    height: 100%;
+    width: 80%;
+    background: #3B38EB;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress__line.services span {
+    width: 86%;
+}
+
+.progress__line.technology span {
+    width: 97.5%;
+}
+
+.bar .progress__line span::before {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: -10px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+.bar .progress__line span::after {
+    position: absolute;
+    right: 0;
+    top: -28px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    background: #000;
+    padding: 1px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText2 {
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress__line.services span::after {
+    content: '86%';
+}
+
+.progress__line.technology span::after {
+    content: '97.5%';
+}
+
+
+@media screen and (max-width: 768px) {
+    .about__campany {
+        height: 220vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 30vw;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2.4em;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.9em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+    }
+
+    .Team {
+        width: 87vw;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 40vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 53vh;
+        width: 44vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 40vw;
+        padding: 0em 1em;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 40vw;
+        padding: 0em 1em;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 32em;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 60vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        bottom: 2.5em;
+        left: 15.4em;
+    }
+
+    .skill__bars {
+        margin-top: 3.4rem;
+        width: 88vw;
+    }
+    .bar {
+        width: 80vw;
+    }
+    .info {
+        width: 80vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 79.6vw;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .about__campany {
+        height: 220vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 30vw;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2.4em;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.9em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+    }
+
+    .Team {
+        width: 87vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 80vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 57vh;
+        width: 80vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 80vw;
+        padding: 0em 1em;
+    }
+    .team__content p {
+        margin-top: -0.4rem;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 80vw;
+        padding: 0em 1em;
+    }
+    .team__content2 p {
+        margin-top: -0.4rem;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 50em;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 80vw;
+        height: 100vh;
+        position: relative;
+        margin-top: 4rem;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        bottom: 2.5em;
+        left: 15.4em;
+        display: none;
+    }
+
+    .skill__bars {
+        margin-top: 17rem;
+        width: 80vw;
+    }
+    .bar {
+        width: 74vw;
+    }
+    .info {
+        width: 73vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 73vw;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    .about__campany {
+        height: 270vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -4rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -18rem;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 40vw;
+    }
+
+    .underline__box h3 {
+        font-size: 1em;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2.2em;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.8em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+    }
+
+    .Team {
+        width: 85vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 84vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 53vh;
+        width: 84vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 84vw;
+        padding: 0em 1em;
+    }
+
+    .team__content h4 {
+        font-size: 1.3em;
+    }
+
+    .team__content p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 84vw;
+        padding: 0em 1em;
+    }
+
+    .team__content2 h4 {
+        font-size: 1.3em;
+    }
+
+    .team__content2 p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 32em;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 84vw;
+        height: 100vh;
+        position: relative;
+        margin-top: 21rem;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        bottom: 2.5em;
+        left: 15.4em;
+        display: none;
+    }
+
+    .skill__bars {
+        margin-top: 1rem;
+        width: 80vw;
+    }
+    .bar {
+        width: 71vw;
+    }
+    .info {
+        width: 70vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .about__campany {
+        height: 240vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -10rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -18rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 50vw;
+        margin-left: -1rem;
+    }
+
+    .underline__box h3 {
+        font-size: 1em;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2em;
+        font-weight: 800;
+        font-family: sans-serif;
+        margin-left: -1rem;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.8em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+        margin-left: -1rem;
+    }
+
+    .Team {
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin-left: -1rem;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 89vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 53vh;
+        width: 89vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 88vw;
+    }
+
+    .team__content h4 {
+        font-size: 1.3em;
+        margin-left: -1rem;
+    }
+
+    .team__content p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 88vw;
+        padding: 0em 1em;
+    }
+
+    .team__content2 h4 {
+        font-size: 1.3em;
+        margin-left: -1rem;
+    }
+
+    .team__content2 p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 32em;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 89vw;
+        height: 70vh;
+        position: relative;
+        margin-top: 26rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        bottom: 2.5em;
+        left: 15.4em;
+        display: none;
+    }
+    .skill__bars {
+        margin-top: 1rem;
+        width: 80vw;
+    }
+    .bar {
+        width: 71vw;
+    }
+    .info {
+        width: 70vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 65vw;
+    }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+    body {
+        overflow-x: hidden;
+    }
+    .about__campany {
+        height: 240vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -2rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -18rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 30vw;
+        margin-left: -1rem;
+    }
+
+    .underline__box h3 {
+        font-size: 1.3em;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2.7em;
+        font-weight: 800;
+        font-family: sans-serif;
+        margin-left: -1rem;
+        margin-top: 1.2rem;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.8em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+        margin-left: -1rem;
+    }
+
+    .Team {
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        margin-left: -1rem;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 89vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 60vh;
+        width: 44vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 38vw;
+    }
+
+    .team__content h4 {
+        font-size: 1.5em;
+        margin-left: -1rem;
+    }
+
+    .team__content p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 36vw;
+        padding: 0em 1em;
+    }
+
+    .team__content2 h4 {
+        font-size: 1.5em;
+        margin-left: -1rem;
+    }
+
+    .team__content2 p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 25em;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 60vw;
+        height: 110vh;
+        position: relative;
+        margin-top: 15rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        top: 32em;
+        left: 25em;
+    }
+
+    .skill__bars {
+        margin-top: -10rem;
+        width: 100vw;
+    }
+    .bar {
+        width: 90vw;
+    }
+    .info {
+        width: 80vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+    body {
+        overflow-x: hidden;
+    }
+    .about__campany {
+        height: 240vh;
+        width: 105%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .about__campany__cantainer {
+        height: 215vh;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -18rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__inner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .underline__box {
+        width: 30vw;
+        margin-left: -1rem;
+    }
+
+    .underline__box h3 {
+        font-size: 1.3em;
+    }
+
+    .about__campany__inner h1 {
+        font-size: 2.7em;
+        font-weight: 800;
+        font-family: sans-serif;
+        margin-left: -1rem;
+        margin-top: 1.2rem;
+    }
+
+    .about__campany__inner p {
+        font-size: 0.8em;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: rgb(112, 111, 111);
+        margin-top: 2rem;
+        margin-left: -1rem;
+    }
+
+    .Team {
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        margin-left: -1rem;
+    }
+
+    .team__cantainer {
+        height: 46.5vh;
+        width: 89vw;
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .team__img__box img {
+        height: 60vh;
+        width: 44vw;
+    }
+
+    .team__content {
+        height: 20vh;
+        width: 38vw;
+    }
+
+    .team__content h4 {
+        font-size: 1.5em;
+        margin-left: -1rem;
+    }
+
+    .team__content p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .team__content2 {
+        height: 30vh;
+        width: 36vw;
+        padding: 0em 1em;
+    }
+
+    .team__content2 h4 {
+        font-size: 1.5em;
+        margin-left: -1rem;
+    }
+
+    .team__content2 p {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .about__campany__inner2 {
+        height: 110vh;
+        width: 89vw;
+        padding: 1.3rem;
+        margin-top: 23rem;
+    }
+
+    .about__campany__right__img .about2__img2 {
+        width: 70vw;
+        height: 110vh;
+        position: relative;
+        margin-top: 15rem;
+        margin-left: -1rem;
+    }
+
+    .about__campany__right__img .about2__img3 {
+        position: absolute;
+        top: 32em;
+        left: 17em;
+    }
+
+    .skill__bars {
+        margin-top: -10rem;
+        width: 90vw;
+    }
+    .bar {
+        width: 80vw;
+    }
+    .info {
+        width: 80vw;
+    }
+    .skill__bars .bar .progress__line {
+        width: 85vw;
+    }
+}

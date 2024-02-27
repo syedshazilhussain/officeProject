@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav__header {
+    height: 23vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: -3em;
+    border-bottom: 2px solid black;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 13vh;
+    width: 100%;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    padding: 3rem;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.logo h1 {
+    margin-left: -1rem;
+    font-family: monospace;
+    font-size: 2.5em;
+}
+
+.website__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.website__links .website__ul {
+    list-style: none;
+    width: 50vw;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.website__links .website__ul li {
+    font-size: 1em;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    transition: .4s;
+}
+
+.website__links ul li:hover {
+    color: #3B38EB;
+    transition: .4s;
+
+}
+.Links {
+    text-decoration: none;
+    color: #000;
+}
+
+.contact__btn {
+    height: 9vh;
+    width: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.contact__btn button {
+    position: relative;
+    border: 2px solid red;
+    height: 9vh;
+    width: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    background: none;
+    color: #A58EF0;
+    border: 2px solid #A58EF0;
+    border-radius: 5px;
+    transition: all .3s ease-out;
+    overflow: hidden;
+}
+.contact__btn button:hover {
+    position: absolute;
+    height: 9vh;
+    width: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /* border: none; */
+    transition: all .3s ease-out;
+}
+.contact__btn button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0vw;
+    height: 20%;
+    background: #3B38EB;
+    border-radius: 500% 500% 0% 500%;
+    z-index: -1;
+    transition: all .3s ease-out;
+}
+.contact__btn button:hover::before {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 17vw;
+    border-radius: 0% 0% 0% 0%;
+    transition: all .3s ease-out;
+}
+.toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__header {
+        height: 20vh;
+        width: 105vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        height: 20vh;
+        width: 112vw;
+        border: 2px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .logo img {
+        height: 10vh;
+    }
+    .logo {
+        font-size: 0.8em;
+    }
+
+    .website__links {
+        height: 100vh;
+        width: 50vw;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 2px solid red;
+    }
+
+    .Mobile__menu__links {
+        position: fixed;
+        top: 5rem;
+        height: 100vh;
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        background-color: #fff;
+        border: 2px solid red;
+
+    }
+
+    .contact__btn {
+        width: 30vw;
+        display: flex;
+        align-items: center;
+        margin-left: 3rem;
+    }
+
+    .toggle {
+        display: block;
+        font-size: 1.7rem;
+    }
+
+    .contact__btn {
+        display: none;
+        width: 20vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .nav__header {
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navbar {
+        height: 20vh;
+        width: 107vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.7rem;
+    }
+    .contact__btn {
+        display: none;
+        width: 30vw;
+    }
+}
+@media screen and (max-width: 429px) {
+    .nav__header {
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navbar {
+        height: 20vh;
+        width: 110vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .contact__btn {
+        display: none;
+        width: 70vw;
+    }
+}
+@media screen and (max-width: 300px) {
+    .logo {
+        width: 50vw;
+        margin-top: 1rem;
+    }
+    .logo img {
+        height: 7vh;
+    }
+    .logo h1 {
+        font-size: 1.9em;
+        margin-left: 0.1rem;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 769px) {
+    .navbar {
+        height: 20vh;
+        width: 110vw;
+        margin-top: 1.4rem;
+    }
+    .website__links .website__ul {
+        width: 60vw;
+        list-style: none;
+        display: flex;
+        gap: 1.9vw;
+        margin-left: -2rem;
+        align-items: center;
+    }
+
+    .website__links .website__ul li {
+        font-size: 0.8em;
+        font-weight: 700;
+        font-family: Roboto, sans-serif;
+        transition: .4s;
+    }
+    .logo img {
+        height: 10vh;
+    }
+    .logo h1 {
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+    .navbar {
+        height: 22vh;
+        width: 110vw;
+        margin-top: 1rem;
+    }
+    .website__links .website__ul {
+        width: 60vw;
+        list-style: none;
+        display: flex;
+        gap: 2.5vw;
+        align-items: center;
+    }
+
+    .website__links .website__ul li {
+        font-size: 1em;
+        font-weight: 700;
+        font-family: Roboto, sans-serif;
+        transition: .4s;
+    }
+    .logo img {
+        height: 11vh;
+    }
+    .logo h1 {
+        font-size: 1.7em;
+    }
+}

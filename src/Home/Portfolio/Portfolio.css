@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Portfolio {
+    height: 100vh;
+    width: 98.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F4F9;
+    margin-top: 10rem;
+}
+
+.Portfolio__cantainer {
+    height: 100vh;
+    width: 98.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portfolio__inner {
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.portfolio__content {
+    width: 35vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.portfolio__content h4 {
+    text-align: center;
+    background-color: #4722E3;
+    width: 12vw;
+    height: 5vh;
+    border-radius: 40px;
+    color: #fff;
+}
+
+.portfolio__content h1 {
+    font-size: 3em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif
+}
+
+.portfolio__content p {
+    margin-top: 0.9rem;
+    color: #979899;
+}
+
+.portfolio__link {
+    height: 7vh;
+    width: 28vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 7px 10px 20px #D2D3D8;
+}
+
+.portfolio__link h6 {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.portfolio__link h6 span {
+    color: #3B38EB;
+    cursor: pointer;
+}
+
+.portfolio__content2 {
+    width: 35vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .Portfolio {
+        height: 150vh;
+        margin-top: 20rem;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+    }
+    .portfolio__content {
+        width: 62vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 18vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 45vw;
+    }
+    .portfolio__content2 {
+        width: 62vw;
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Portfolio {
+        height: 150vh;
+        margin-top: 20rem;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+        margin-top: 3rem;
+    }
+    .portfolio__content {
+        width: 62vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 25vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 45vw;
+        height: 10vh;
+    }
+    .portfolio__content2 {
+        width: 62vw;
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (max-width: 429px) {
+    .Portfolio {
+        height: 150vh;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+        margin-top: 2rem;
+    }
+    .portfolio__content {
+        width: 62vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 35vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 65vw;
+    }
+    .portfolio__content2 {
+        width: 85vw;
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .Portfolio {
+        height: 150vh;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+        margin-top: 3rem;
+    }
+    .portfolio__content {
+        width: 62vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 50vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 80vw;
+        height: 10vh;
+    }
+    .portfolio__content2 {
+        width: 100vw;
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+    body {
+        overflow-x: hidden;
+    }
+    .Portfolio {
+        height: 150vh;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+        margin-top: -3rem;
+    }
+    .portfolio__content {
+        width: 62vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 23vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 49vw;
+        height: 10vh;
+    }
+    .portfolio__content2 {
+        width: 55vw;
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+    body {
+        overflow-x: hidden;
+    }
+    .Portfolio {
+        height: 150vh;
+    }
+    .Portfolio__cantainer {
+        width: 100vw;
+        height: 140vh;
+        margin-top: -3rem;
+    }
+    .portfolio__content {
+        width: 49vw;
+        margin-top: -4rem;
+    }
+
+    .portfolio__content h4 {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #4722E3;
+        width: 23vw;
+        height: 6vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+    .portfolio__link {
+        width: 38vw;
+        height: 9vh;
+    }
+    .portfolio__content2 {
+        width: 49vw;
+        margin-top: 16rem;
+    }
+}

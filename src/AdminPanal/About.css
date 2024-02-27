@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid black;
+    margin-top: 7rem;
+    margin-left: -19.5rem;
+    padding: 0.6rem;
+}
+.user__table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid green;
+}
+.user__table tr {
+    display: flex;
+    border: 1px solid blue;
+    height: 10vh;
+    width: 77vw;
+    color: blue;
+    margin-left: -16rem;
+}
+.user__table tr th {
+    border: 1px solid red;
+    height: 10vh;
+    width: 60vw;
+    color: blue;
+    padding: 1rem;
+}
+.user__table tr td {
+    border: 1px solid red;
+    height: 10vh;
+    width: 60vw;
+    color: blue;
+    padding: 1rem;
+}
