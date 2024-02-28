@@ -13,7 +13,7 @@
     margin-top: 6rem;
 }
 .protal__container {
-    height: 120vh;
+    height: 130vh;
     width: 40vw;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
 }
 .portal__form {
     width: 35vw;
-    height: 105vh;
+    height: 115vh;
     display: flex;
     gap: 1em;
     align-items: center;
@@ -90,6 +90,14 @@
     font-weight: 900;
     color: #600BD6;
 }
+.message {
+    color: red;
+    font-size: 2em;
+    margin-top: -2rem;
+    font-family: monospace;
+    font-style: italic;
+    font-weight: 900;
+}
 .login {
     position: relative;
     height: 90vh;
@@ -101,7 +109,7 @@
     margin-top: 6rem;
 }
 .login__container {
-    height: 70vh;
+    height: 90vh;
     width: 40vw;
     display: flex;
     align-items: center;

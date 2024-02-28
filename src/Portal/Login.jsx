@@ -44,7 +44,6 @@ function Login() {
                     // ...
                 })
                 .catch((error) => {
-                    const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(errorMessage)
                 });
@@ -65,7 +64,38 @@ function Login() {
         //         alert(error)
         //     }
         // }
-        console.log(RegistrationInput)
+        const getUserArr = window.localStorage.getItem('Data')
+        console.log(getUserArr)
+        const { allottedId, email, password } = RegistrationInput;
+        if (allottedId === '') {
+            alert('Allotted Id Feild is Required')
+        } else if (email === '') {
+            alert('Email Feild is Required')
+        } else if (!email.includes('@')) {
+            alert('Plz Enter Valid Email Address')
+        } else if (password === '') {
+            alert('Password Field is Required')
+        } else if (password.length < 5) {
+            alert('Password Length Greater Five')
+        } else {
+            if (getUserArr && getUserArr.length) {
+                const userData = JSON.parse(getUserArr)
+                console.log(userData)
+                const userLogin = userData.filter((el, k) => {
+                    return el.allottedId === allottedId && el.email === email && el.password === password
+                });
+                if (userLogin.length === 0) {
+                    alert('Invalid Details')
+                } else {
+                    console.log('use login succesfully')
+                    window.localStorage.setItem('user__login', JSON.stringify(userLogin))
+                    setMessage(false)
+                    if (email === "kazim222@gmail.com") {
+                        navigate('/about')
+                    }
+                }
+            }
+        }
     }
     return (
         <div className='login'>
@@ -76,7 +106,7 @@ function Login() {
                     <input type="email" placeholder='Enter Your Email' name='email' value={RegistrationInput.email} onChange={postUserData} />
                     <input type="password" placeholder='Enter Your Password' name='password' value={RegistrationInput.password} onChange={postUserData} />
                     <p>Already Have An Account <Link to='/portal'> Registration</Link></p>
-                    <p>{message}</p>
+                    <p className='message'>{message}</p>
                     <button onClick={sudmitData}><BasicModal /></button>
                 </div>
             </div>

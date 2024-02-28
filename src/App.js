@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar/Navbar';
 import Home from './Home/Home';
 // import operifyLogo from './img/Oprify final-04.png'
@@ -12,6 +13,7 @@ import Login from './Portal/Login';
 import PermanentDrawerLeft from './AdminPanal/Drawers';
 import Inbox from './AdminPanal/Inbox';
 import About from './AdminPanal/About';
+import Error from './AdminPanal/Error';
 // import PersistentDrawerLeft from './AdminPanal/Drawers';
 
 function App() {
@@ -62,10 +64,10 @@ function App() {
         <Route path='/Services' element={<Services />} />
         <Route path='/portal/*' element={<Portal />} />
         <Route path='/login' element={<Login />} />
-        {/* <Route path='/Drawer' element={<Drawer/>}/> */}
-        {/* <Route path='/Drawers' element={<PermanentDrawerLeft />} /> */}
+        <Route path='/Drawers' element={<PermanentDrawerLeft />} />
         <Route path='/inbox' element={<Inbox/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='*' element={<Error/>}/>
       </Routes>
       <Footer />
 

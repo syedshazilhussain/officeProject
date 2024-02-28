@@ -19,12 +19,14 @@ function Portal() {
             data: "",
         }
     )
+    const [dataInp, setDataInp] = useState([])
     const firstName = useRef();
     const allottedId = useRef();
     const email = useRef();
     const password = useRef();
     const data = useRef();
     const [message, setMessage] = useState('')
+    const [modal, setModal] = useState(false)
     const navigate = useNavigate()
 
     let name, value;
@@ -88,22 +90,29 @@ function Portal() {
         //         alert(error)
         //     }
         // }
-        if(firstName.current.value && allottedId.current.value && email.current.value && password.current.value && data.current.value)
-      {
-        window.localStorage.setItem("name",firstName.current.value)
-        window.localStorage.setItem("email",allottedId.current.value)
-        window.localStorage.setItem("password",email.current.value)
-        window.localStorage.setItem("signUp",password.current.value)
-        window.localStorage.setItem("signin",data.current.value)
-        alert("Account created successfully!!")
-        window.location.reload()
-      }
-        console.log(firstName.current.value)
-        console.log(allottedId.current.value)
-        console.log(email.current.value)
-        console.log(password.current.value)
-        console.log(data.current.value)
-        console.log(RegistrationInput)
+        const {firstName, allottedId, email, password, data } = RegistrationInput
+        if(firstName === '') {
+            alert('Name Feild is Required')
+        }else if (allottedId === '') {
+            alert('Allotted Id Feild is Required')
+        }else if (email === '') {
+            alert('Email Feild is Required')
+        }else if(!email.includes('@')) {
+            alert('Plz Enter Valid Email Address')
+        }else if (password === '') {
+            alert('Password Field is Required')
+        }else if(password.length < 5) {
+            alert('Password Length Greater Five')
+        }else if (data === '') {
+            alert('Password Field is Required')
+        }
+        else {
+            console.log('data added succesfully')
+            window.localStorage.setItem('Data', JSON.stringify([...dataInp, RegistrationInput]));
+            setModal(!modal)
+            setMessage(false)
+            navigate('/login')
+        }
     }
     return (
         <>
@@ -118,8 +127,10 @@ function Portal() {
                         <input type="password" placeholder='Enter Your Password' name='password' value={RegistrationInput.password} onChange={postUserData} ref={password} />
                         <input type="date" placeholder='Select Your Date' name='data' value={RegistrationInput.data} onChange={postUserData} ref={data} />
                         <p>Already Have An Account <Link to='/login'> Login</Link></p>
-                        <p>{message}</p>
-                        <button onClick={sudmitData}><BasicModal /></button>
+                        <p className='message'>{message}</p>
+                        <button onClick={sudmitData}>
+                            {modal && modal ? <BasicModal/> : <h1>false condition</h1>}
+                        </button>
                     </div>
                 </div>
             </div>
