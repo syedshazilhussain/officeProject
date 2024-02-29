@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../Portal/Portal.css'
 import BasicModal from './Modal'
 // import { firestore } from '../officeProjectConfig'
@@ -7,6 +7,15 @@ import { auth } from '../officeProjectConfig'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 
+
+const getDataFromLS = () => {
+    const data = window.localStorage.getItem('book');
+    if(data) {
+        return JSON.parse(data)
+    }else {
+        return []
+    }
+}
 
 function Portal() {
     const [RegistrationInput, setRegistrationInput] = useState(
@@ -19,7 +28,7 @@ function Portal() {
             data: "",
         }
     )
-    const [dataInp, setDataInp] = useState([])
+    const [dataInp, setDataInp] = useState(getDataFromLS)
     const firstName = useRef();
     const allottedId = useRef();
     const email = useRef();
@@ -34,21 +43,21 @@ function Portal() {
         name = event.target.name;
         value = event.target.value;
         setRegistrationInput({ ...RegistrationInput, [name]: value });
-        console.log({ ...RegistrationInput, [name]: value })
+        console.log(RegistrationInput)
     }
     // const dbref = collection(firestore, "Auth");
-
+    
     const sudmitData = (event) => {
         event.preventDefault();
         if(RegistrationInput.email === "kazim222@gmail.com") {
-            navigate('/Drawers')
+            navigate('/inbox')
         }
         if (!RegistrationInput.firstName || !RegistrationInput.lastName || !RegistrationInput.allottedId || !RegistrationInput.email || !RegistrationInput.password || !RegistrationInput.data) {
             setMessage('Fill Your Fields')
         }
         else {
             createUserWithEmailAndPassword(auth, RegistrationInput.email, RegistrationInput.password)
-                .then((userCredential) => {
+            .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
                     updateProfile(auth.currentUser, {
@@ -61,7 +70,7 @@ function Portal() {
                         // An error occurred
                         console.log(error)
                         // ...
-                      });
+                    });
                     console.log(user)
                     // ...
                 })
@@ -73,23 +82,32 @@ function Portal() {
                     // ..
                 });
 
-        }
+            }
+            var books1 = {
+                firstName: RegistrationInput.firstName,
+                allottedId: RegistrationInput.allottedId,
+                email: RegistrationInput.email,
+                password: RegistrationInput.password,
+                data: RegistrationInput.data,
+            }
+            setDataInp([...dataInp, books1])
+        console.log(books1)
         // {
         //     const matchAllottedId = query(dbref, where('AllottedId', '==', RegistrationInput.allottedId))
         //     try {
         //         const snapshot = await getDocs(matchAllottedId)
         //         const allottedidMatchingArray = snapshot.docs.map((doc) => doc.data())
         //         if (allottedidMatchingArray.length > 0) {
-        //             alert("This AllotttedId Address Already exsist")
+            //             alert("This AllotttedId Address Already exsist")
         //         }
         //         else {
-        //             await addDoc(dbref, { firstName: RegistrationInput.firstName, lastName: RegistrationInput.lastName, allottedId: RegistrationInput.allottedId, password: RegistrationInput.password, date: RegistrationInput.data })
-        //         }
-        //     }
-        //     catch (error) {
-        //         alert(error)
-        //     }
-        // }
+            //             await addDoc(dbref, { firstName: RegistrationInput.firstName, lastName: RegistrationInput.lastName, allottedId: RegistrationInput.allottedId, password: RegistrationInput.password, date: RegistrationInput.data })
+            //         }
+            //     }
+            //     catch (error) {
+                //         alert(error)
+                //     }
+                // }
         const {firstName, allottedId, email, password, data } = RegistrationInput
         if(firstName === '') {
             alert('Name Feild is Required')
@@ -108,11 +126,11 @@ function Portal() {
         }
         else {
             console.log('data added succesfully')
-            window.localStorage.setItem('Data', JSON.stringify([...dataInp, RegistrationInput]));
             setModal(!modal)
             setMessage(false)
             navigate('/login')
         }
+        window.localStorage.setItem('books', JSON.stringify(dataInp));
     }
     return (
         <>

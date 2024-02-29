@@ -1,50 +1,136 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../AdminPanal/Inbox.css'
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import PermanentDrawerLeft from './Drawers'
+import { Table } from 'react-bootstrap';
 
 function Inbox() {
+    const [show, setShow] = useState(false);
+    const [loginData, setLoginData] = useState([]);
+    var todayDate = new Date().toISOString().slice(0, 10);
+    const getUser = window.localStorage.getItem('book')
+    const user = JSON.parse(getUser)
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const Birthday = () => {
+        if (getUser && getUser.length) {
+            setLoginData(user)
+            console.log(...loginData)
+            // console.log(user)
+
+            const userBirth = loginData.map((el, k) => {
+                return el.data === todayDate
+            });
+
+            // if (userBirth) {
+            //     setTimeout(() => {
+            //         console.log('ok')
+            //         handleShow();
+            //     }, 3000)
+            // }
+        }
+    }
+    useEffect(() => {
+        // handleShow()
+        Birthday()
+    }, [])
     return (
         <>
-            <Box sx={{ display: 'flex', width: "444vw"}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: "444vw", height: "100vh", position: 'relative', marginLeft: 30 }}>
                 <PermanentDrawerLeft />
-                <div className='Inbox'>
-                    <h1>Inbox</h1>
-                </div>
                 <Box
                     component="main"
-                    sx={{ flexGrow: 1, bgcolor: 'black', p: 3 }}
+                    sx={{ flexGrow: 1, bgcolor: 'white', color: 'black', p: 3, height: '100vh', width: '100vw', position: 'relative' }}
                 >
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                        enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                        imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                        Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                        Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                        nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                        leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                        feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                        consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                        sapien faucibus et molestie ac.
-                    </Typography>
-                    <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                        eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                        neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                        tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                        sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                        tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                        gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                        et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                        tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                        eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                        posuere sollicitudin aliquam ultrices sagittis orci a.
-                    </Typography>
+
+                    <div className='Inbox'>
+                        <h1>Dashboard</h1>
+                        <div className='inbox__container'>
+                            <div className='inbox__inner'>
+                                <div className='users__icon'>
+                                    <i className="ri-user-3-line"></i>
+                                </div>
+                                <div className='users__content'>
+                                    <h6>Users</h6>
+                                    <h4>10</h4>
+                                </div>
+                            </div>
+                            <div className='inbox__inner'>
+                                <div className='inventory__icon'>
+                                    <i className="ri-shopping-bag-line"></i>
+                                </div>
+                                <div className='users__content'>
+                                    <h6>Inventory</h6>
+                                    <h4>20</h4>
+                                </div>
+                            </div>
+                            <div className='inbox__inner'>
+                                <div className='order__icon'>
+                                    <i className="ri-shopping-cart-2-line"></i>
+                                </div>
+                                <div className='users__content'>
+                                    <h6>Order</h6>
+                                    <h4>30</h4>
+                                </div>
+                            </div>
+                            <div className='inbox__inner'>
+                                <div className='revenue__icon'>
+                                    <i className="ri-money-dollar-circle-line"></i>
+                                </div>
+                                <div className='users__content'>
+                                    <h6>Revenue</h6>
+                                    <h4>30</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='Users'>
+                            <h3>Recent Users</h3>
+                            <Table striped bordered hover className='user__table'>
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Allotted Id</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        loginData.map((el, k) => {
+                                            return (
+                                                <tr key={k}>
+                                                    <td>{el.firstName}</td>
+                                                    <td>{el.allottedId}</td>
+                                                    <td>{el.email}</td>
+                                                    <td className='action'><button><i className="ri-pencil-line"></i></button><button><i className="ri-delete-bin-6-line"></i></button></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </Table>
+                        </div>
+                    </div>
                 </Box>
-            </Box>
+            </Box >
+            <Modal show={show} onHide={handleClose} >
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

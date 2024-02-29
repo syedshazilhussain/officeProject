@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import BasicModal from './Modal'
 // import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { signInWithEmailAndPassword } from "firebase/auth";
 // import { firestore } from '../officeProjectConfig';
 import { auth } from '../officeProjectConfig'
+
+const getDataFromLS = () => {
+    const data = window.localStorage.getItem('book');
+    if(data) {
+        return JSON.parse(data)
+    }else {
+        return []
+    }
+}
 
 function Login() {
     const [RegistrationInput, setRegistrationInput] = useState(
@@ -15,6 +24,7 @@ function Login() {
         }
     )
 
+    const [books, setBooks] = useState(getDataFromLS)
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
@@ -30,7 +40,7 @@ function Login() {
     const sudmitData = (event) => {
         event.preventDefault();
         if (RegistrationInput.email === "kazim222@gmail.com") {
-            navigate('/Drawers')
+            navigate('/inbox')
         }
         if (!RegistrationInput.firstName || !RegistrationInput.lastName || !RegistrationInput.allottedId || !RegistrationInput.email || !RegistrationInput.password || !RegistrationInput.data) {
             setMessage('Fill Your Fields')
@@ -64,8 +74,13 @@ function Login() {
         //         alert(error)
         //     }
         // }
-        const getUserArr = window.localStorage.getItem('Data')
-        console.log(getUserArr)
+        let book = {
+            allottedId: RegistrationInput.allottedId,
+            email: RegistrationInput.email,
+            password: RegistrationInput.password,
+        }
+        setBooks([...books, book])
+        console.log(books)
         const { allottedId, email, password } = RegistrationInput;
         if (allottedId === '') {
             alert('Allotted Id Feild is Required')
@@ -78,17 +93,16 @@ function Login() {
         } else if (password.length < 5) {
             alert('Password Length Greater Five')
         } else {
-            if (getUserArr && getUserArr.length) {
-                const userData = JSON.parse(getUserArr)
-                console.log(userData)
-                const userLogin = userData.filter((el, k) => {
-                    return el.allottedId === allottedId && el.email === email && el.password === password
-                });
-                if (userLogin.length === 0) {
+            if (books && books.length) {
+                // console.log(userData)
+                // const userLogin = userData.filter((el, k) => {
+                //     return el.allottedId === allottedId && el.email === email && el.password === password
+                // });
+                if (book.length === 0) {
                     alert('Invalid Details')
                 } else {
                     console.log('use login succesfully')
-                    window.localStorage.setItem('user__login', JSON.stringify(userLogin))
+                    // window.localStorage.setItem('user__login', JSON.stringify(userLogin))
                     setMessage(false)
                     if (email === "kazim222@gmail.com") {
                         navigate('/about')
@@ -96,6 +110,7 @@ function Login() {
                 }
             }
         }
+        window.localStorage.setItem('book', JSON.stringify(books));
     }
     return (
         <div className='login'>

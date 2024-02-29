@@ -100,12 +100,12 @@ export default function PermanentDrawerLeft() {
                             <ListItemText primary="Users" />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
+                    <ListItem disablePadding onClick={() => {navigate("/login")}}>
                         <ListItemButton>
                             <ListItemIcon>
                                 {/* {index % 2 === 0 ? <h1>hello</h1> : <h1>bye</h1>} */}
                             </ListItemIcon>
-                            <ListItemText primary="setting" />
+                            <ListItemText primary="Logout" />
                         </ListItemButton>
                     </ListItem>
                 </List>

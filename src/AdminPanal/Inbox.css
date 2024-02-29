@@ -5,8 +5,174 @@
 }
 .Inbox {
     position: relative;
-    height: 100vh;
+    height: 155vh;
     width: 100vw;
     border: 2px solid black;
-    margin-top: 10rem;
+    margin-top: 4.7rem;
+    margin-left: -19.5rem;
+    background-color: rgb(243, 239, 239);
+    padding: 1.5rem;
+    z-index: 1;
+}
+.inbox__container {
+    height: 50vh;
+    width: 77.5vw;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.inbox__inner {
+    height: 30vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.users__icon {
+    width: 4vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: 1.7em;
+    font-weight: 900;
+    font-family: monospace;
+    background-color: rgba(7, 233, 7, 0.25  );
+    border-radius: 30px;
+    padding: 8px;
+}
+.inventory__icon {
+    width: 4vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    font-size: 1.7em;
+    font-weight: 900;
+    font-family: monospace;
+    background-color: rgba(0, 0, 255, 0.25 );
+    border-radius: 30px;
+    padding: 8px;
+}
+.order__icon {
+    width: 4vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: purple;
+    font-size: 1.7em;
+    font-weight: 900;
+    font-family: monospace;
+    background-color: rgba(0, 255, 255, 0.25 );
+    border-radius: 30px;
+    padding: 8px;
+}
+.revenue__icon {
+    width: 4vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 1.7em;
+    font-weight: 900;
+    font-family: monospace;
+    background-color: rgba(255, 0, 0, 0.25 );
+    border-radius: 30px;
+    padding: 8px;
+}
+.users__content {
+    width: 8vw;
+    height: 15vh;
+    display: flex;
+    gap: 0.3em;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.7em;
+    font-weight: 900;
+    padding: 8px;
+}
+.users__content h6 {
+    color: grey;
+    font-size: 0.7em;
+    font-weight: 600;
+    font-family: cursive;
+}
+.users__content h4 {
+    color: #000;
+    font-size: 1.1em;
+    font-weight: 900;
+    font-family: cursive;
+}
+.Users {
+    width: 77.5vw;
+    height: 80vh;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3em;
+}
+.Users h3 {
+    font-family: monospace;
+    font-weight: 900;
+    font-style: italic;
+}
+.Users .user__table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin-left: 16rem;
+}
+.user__table tr {
+    display: flex;
+    height: 10vh;
+    width: 77vw;
+    color: #600BD6;
+    margin-left: -16rem;
+}
+.user__table tr th {
+    height: 10vh;
+    width: 60vw;
+    color: blue;
+    padding: 1rem;
+}
+.user__table tr td {
+    height: 10vh;
+    width: 60vw;
+    color: blue;
+    padding: 1rem;
+}
+.action {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.action button {
+    background-color: #600BD6;
+    height: 7.5vh;
+    width: 3.5vw;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    font-size: x-large;
+    transition: all .9s ease-in;
+}
+.action button:hover {
+    background: none;
+    border: 5px solid #600BD6;
+    color: #600BD6;
+    transition: all .9s ease-out;
 }

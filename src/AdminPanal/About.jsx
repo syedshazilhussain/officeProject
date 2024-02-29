@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../AdminPanal/About.css'
 import Box from '@mui/material/Box';
 import Table from 'react-bootstrap/Table';
-import Typography from '@mui/material/Typography';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import PermanentDrawerLeft from './Drawers'
@@ -13,7 +12,7 @@ function About() {
     const [loginData, setLoginData] = useState([]);
     const [show, setShow] = useState(false);
     var todayDate = new Date().toISOString().slice(0, 10);
-    const getUser = window.localStorage.getItem('user__login')
+    const getUser = window.localStorage.getItem('book')
     const user = JSON.parse(getUser)
     const navigate = useNavigate()
     // console.log(user)
@@ -41,7 +40,7 @@ function About() {
     }
 
     const userlogout = () => {
-        localStorage.removeItem("user_login")
+        localStorage.removeItem("book")
         navigate("/login");
     }
 
@@ -54,7 +53,7 @@ function About() {
     }, [])
     return (
         <>
-            {loginData.length === 0 ? "error" :
+            {loginData.length === 0 ? <h1 className='errorMesssage'>error</h1> :
                 <>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: "444vw", height: "100vh", position: 'relative', marginLeft: 30 }}>
                         <PermanentDrawerLeft />
