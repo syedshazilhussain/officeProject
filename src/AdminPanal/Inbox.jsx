@@ -19,7 +19,6 @@ function Inbox() {
     const Birthday = () => {
         if (getUser && getUser.length) {
             setLoginData(user)
-            console.log(...loginData)
             // console.log(user)
 
             const userBirth = loginData.map((el, k) => {

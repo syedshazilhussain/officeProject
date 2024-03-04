@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 const getDataFromLS = () => {
-    const data = window.localStorage.getItem('book');
+    const data = window.localStorage.getItem('books');
     if(data) {
         return JSON.parse(data)
     }else {
@@ -91,6 +91,7 @@ function Portal() {
                 data: RegistrationInput.data,
             }
             setDataInp([...dataInp, books1])
+        console.log(dataInp)
         console.log(books1)
         // {
         //     const matchAllottedId = query(dbref, where('AllottedId', '==', RegistrationInput.allottedId))
@@ -128,9 +129,9 @@ function Portal() {
             console.log('data added succesfully')
             setModal(!modal)
             setMessage(false)
+            window.localStorage.setItem('books', JSON.stringify(dataInp));
             navigate('/login')
         }
-        window.localStorage.setItem('books', JSON.stringify(dataInp));
     }
     return (
         <>

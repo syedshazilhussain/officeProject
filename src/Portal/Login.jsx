@@ -18,6 +18,7 @@ const getDataFromLS = () => {
 function Login() {
     const [RegistrationInput, setRegistrationInput] = useState(
         {
+            firstName: "",
             allottedId: "",
             email: "",
             password: "",
@@ -75,6 +76,7 @@ function Login() {
         //     }
         // }
         let book = {
+            firstName: RegistrationInput.firstName,
             allottedId: RegistrationInput.allottedId,
             email: RegistrationInput.email,
             password: RegistrationInput.password,
@@ -117,6 +119,7 @@ function Login() {
             <div className='login__container'>
                 <h1>Login Form</h1>
                 <div className='login__form'>
+                    <input type="text" placeholder='Enter Your Name' name='firstName' value={RegistrationInput.firstName} onChange={postUserData} />
                     <input type="number" placeholder='Company Allotted Id' name='allottedId' value={RegistrationInput.allottedId} onChange={postUserData} />
                     <input type="email" placeholder='Enter Your Email' name='email' value={RegistrationInput.email} onChange={postUserData} />
                     <input type="password" placeholder='Enter Your Password' name='password' value={RegistrationInput.password} onChange={postUserData} />

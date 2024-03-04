@@ -6,16 +6,20 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import PermanentDrawerLeft from './Drawers'
 import { useNavigate } from 'react-router-dom';
+import Error from './Error';
 
 
 function About() {
     const [loginData, setLoginData] = useState([]);
+    const [editValue, setEditValue] = useState(null);
+    const [editBox, setEditBox] = useState(false);
+    const [input, setInput] = useState('');
     const [show, setShow] = useState(false);
     var todayDate = new Date().toISOString().slice(0, 10);
     const getUser = window.localStorage.getItem('book')
     const user = JSON.parse(getUser)
     const navigate = useNavigate()
-    // console.log(user)
+    console.log(user)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -23,8 +27,9 @@ function About() {
     const Birthday = () => {
         if (getUser && getUser.length) {
             setLoginData(user)
-            console.log(...loginData)
-            // console.log(user)
+            // loginData.push(user)
+            console.log(user)
+            console.log(loginData)
 
             const userBirth = loginData.map((el, k) => {
                 return el.data === todayDate
@@ -46,14 +51,27 @@ function About() {
 
     const edit = (val) => {
         console.log(val)
+        setEditValue(val)
+        // setEditBox(true)
+        // navigate('/editpage')
+        console.log(editValue)
     }
+
+    const searchText = (event) => {
+        setInput(event.target.value)
+    }
+    let datasearch = loginData.filter(item => {
+        return Object.keys(item).some(key =>
+            item[key].toString().toLowerCase().includes(input.toString().toLowerCase())
+        )
+    });
 
     useEffect(() => {
         Birthday();
     }, [])
     return (
         <>
-            {loginData.length === 0 ? <h1 className='errorMesssage'>error</h1> :
+            {loginData.length === 0 ? <Error /> :
                 <>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: "444vw", height: "100vh", position: 'relative', marginLeft: 30 }}>
                         <PermanentDrawerLeft />
@@ -62,12 +80,16 @@ function About() {
                             sx={{ flexGrow: 1, bgcolor: 'white', color: 'black', p: 3, height: '100vh', width: '100vw', position: 'relative' }}
                         >
                             <div className='about'>
-                                <h1>Employement</h1>
-                                <h1>10</h1>
+                                <div className='emploment__inner'>
+                                    <div className='emploment__content'>
+                                        <h1>Employement</h1>
+                                        <h1>10</h1>
+                                    </div>
+                                    <input type="number" placeholder='Enter Your Emploment' value={input} onChange={searchText.bind(this)} name="" id="" />
+                                </div>
                                 <Table striped bordered hover className='user__table'>
                                     <thead>
                                         <tr>
-                                            <th>#</th>
                                             <th>First Name</th>
                                             <th>Allotted Id</th>
                                             <th>Email</th>
@@ -75,19 +97,21 @@ function About() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                            {
-                                                loginData.map((el, k) => {
-                                                    return (
+                                        {
+                                            datasearch.map((el, k) => {
+                                                // let { firstName } = el
+                                                return (
+                                                    <>
                                                         <tr key={k}>
-                                                            <td>1</td>
                                                             <td>{el.firstName}</td>
                                                             <td>{el.allottedId}</td>
                                                             <td>{el.email}</td>
-                                                            <td className='action'><button onClick={edit(k)}><i className="ri-pencil-line"></i></button><button onClick={userlogout}><i className="ri-delete-bin-6-line"></i></button></td>
+                                                            <td className='action'><button onClick={() => edit(k)}><i className="ri-pencil-line"></i></button><button onClick={userlogout}><i className="ri-delete-bin-6-line"></i></button></td>
                                                         </tr>
-                                                    )
-                                                })
-                                            }
+                                                    </>
+                                                )
+                                            })
+                                        }
                                     </tbody>
                                 </Table>
                             </div>

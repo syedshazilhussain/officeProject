@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "pudlic",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
