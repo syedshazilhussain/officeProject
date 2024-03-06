@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import PermanentDrawerLeft from './Drawers'
 import { Table } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Inbox() {
     const [show, setShow] = useState(false);
@@ -12,6 +13,7 @@ function Inbox() {
     var todayDate = new Date().toISOString().slice(0, 10);
     const getUser = window.localStorage.getItem('book')
     const user = JSON.parse(getUser)
+    const navigate = useNavigate()
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -49,13 +51,13 @@ function Inbox() {
                     <div className='Inbox'>
                         <h1>Dashboard</h1>
                         <div className='inbox__container'>
-                            <div className='inbox__inner'>
+                            <div className='inbox__inner' onClick={() => navigate('/about')}>
                                 <div className='users__icon'>
                                     <i className="ri-user-3-line"></i>
                                 </div>
                                 <div className='users__content'>
                                     <h6>Users</h6>
-                                    <h4>10</h4>
+                                    <h4>{user.length}</h4>
                                 </div>
                             </div>
                             <div className='inbox__inner'>

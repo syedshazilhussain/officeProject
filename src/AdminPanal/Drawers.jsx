@@ -56,8 +56,11 @@ export default function PermanentDrawerLeft() {
                         {/* <MenuIcon /> */}
                         {/* <h1>T</h1> */}
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" sx={{ marginTop: 3, fontSize: 33, }}>
-                        Permanent drawer
+                    <Typography variant="h6" noWrap component="div" sx={{ marginTop: 3, fontSize: 33, display: 'flex', gap: 71}}>
+                        Operify Drawer
+                        <div className='profile'>
+                            <h1>Kazim Naqvi</h1>
+                        </div>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -84,28 +87,28 @@ export default function PermanentDrawerLeft() {
                 {/* <Toolbar /> */}
                 <Divider />
                 <List>
-                    <ListItem disablePadding onClick={() => { navigate("/inbox") }}>
+                    <ListItem disablePadding onClick={() => { navigate("/inbox") }} className='drawer__links'>
                         <ListItemButton>
                             <ListItemIcon>
                                 {/* {index % 2 === 0 ? <h1>hello</h1> : <h1>bye</h1>} */}
                             </ListItemIcon>
-                            <ListItemText primary="Dashboard" sx={{ color: 'black' }} />
+                            <ListItemText primary="Dashboard" className='drawer__text' />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding onClick={() => { navigate("/about") }}>
+                    <ListItem disablePadding onClick={() => { navigate("/about") }} className='drawer__links'>
                         <ListItemButton>
                             <ListItemIcon>
                                 {/* {index % 2 === 0 ? <h1>hello</h1> : <h1>bye</h1>} */}
                             </ListItemIcon>
-                            <ListItemText primary="Users" />
+                            <ListItemText primary="Users" className='drawer__text' />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding onClick={() => {navigate("/login")}}>
+                    <ListItem disablePadding onClick={() => {navigate("/login")}} className='drawer__links'>
                         <ListItemButton>
                             <ListItemIcon>
                                 {/* {index % 2 === 0 ? <h1>hello</h1> : <h1>bye</h1>} */}
                             </ListItemIcon>
-                            <ListItemText primary="Logout" />
+                            <ListItemText primary="Logout" className='drawer__text' />
                         </ListItemButton>
                     </ListItem>
                 </List>

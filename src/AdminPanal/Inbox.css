@@ -7,7 +7,6 @@
     position: relative;
     height: 155vh;
     width: 100vw;
-    border: 2px solid black;
     margin-top: 4.7rem;
     margin-left: -19.5rem;
     background-color: rgb(243, 239, 239);
@@ -120,6 +119,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 4rem;
     padding: 1.3em;
 }
 .Users h3 {
@@ -175,4 +175,42 @@
     border: 5px solid #600BD6;
     color: #600BD6;
     transition: all .9s ease-out;
+}
+.profile {
+    height: 8vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transition: all .9s ease-in;
+}
+
+.profile h1 {
+    font-family: cursive;
+    font-size: 0.7em;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+.profile h1:hover {
+    
+    color: #73E6F9;
+    transition: all .2s ease-out;
+}
+.profile h1::selection {
+    background: #73E6F9;
+    color: #600BD6;
+}
+.drawer__links:hover {
+    background-color: #600BD6;
+}
+.drawer__text {
+    font-family: cursive;
+    font-weight: 900;
+}
+.drawer__links:hover .drawer__text {
+    color: #fff;
 }

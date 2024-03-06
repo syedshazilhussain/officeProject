@@ -26,10 +26,10 @@ function Navbar() {
                         <Link className='Links' to='/Services'>
                             <li>IT Services</li>
                         </Link>
-                        <Link className='Links'>
+                        <Link className='Links' to='/portfolio'>
                             <li>Portfolio</li>
                         </Link>
-                        <Link className='Links'>
+                        <Link className='Links' to='/aboutUs'>
                             <li>About Us</li>
                         </Link>
                     </ul>

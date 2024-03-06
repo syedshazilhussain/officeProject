@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import Services from './Services/Services';
 import Footer from './Footer/Footer';
 import Portal from './Portal/Portal';
+import Abouts from './About/About';
 import Login from './Portal/Login';
 // import Drawer from './AdminPanal/Drawer';
 import PermanentDrawerLeft from './AdminPanal/Drawers';
@@ -15,6 +16,7 @@ import Inbox from './AdminPanal/Inbox';
 import About from './AdminPanal/About';
 import Error from './AdminPanal/Error';
 import EditPage from './AdminPanal/EditPage';
+import Portfolio from './Portfolio/Portfolio';
 // import PersistentDrawerLeft from './AdminPanal/Drawers';
 
 function App() {
@@ -64,6 +66,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Services' element={<Services />} />
         <Route path='/portal/*' element={<Portal />} />
+        <Route path='aboutUs' element={<Abouts />}/>
+        <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/login' element={<Login />} />
         <Route path='/Drawers' element={<PermanentDrawerLeft />} />
         <Route path='/inbox' element={<Inbox/>}/>

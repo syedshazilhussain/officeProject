@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     margin-top: 7rem;
     margin-left: -19.5rem;
@@ -165,4 +165,35 @@
     background-color: #600BD6;
     color: #fff;
     transition: all .9s ease-in;
+}
+.editInp {
+    height: 6vh;
+    width: 16vw;
+    border: 2px solid #600BD6;
+    border-radius: 13px;
+    outline: none;
+    padding: 1.2rem 2rem;
+}
+.editInp::placeholder {
+    color: #600BD6;
+    font-family: cursive;
+    font-weight: 600;
+}
+.check {
+    background-color: #600BD6;
+    height: 7.5vh;
+    width: 3.5vw;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: 600;
+    transition: all .9s ease-in;
+    margin-top: -0.5rem;
+}
+.check:hover {
+    background: none;
+    border: 5px solid #600BD6;
+    color: #600BD6;
+    transition: all .9s ease-out;
 }

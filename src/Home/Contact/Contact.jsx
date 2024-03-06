@@ -4,7 +4,7 @@ import bussiness__img from '../../img/bussiness.webp'
 
 function Contacts() {
   return (
-    <div className='contact'>
+    <div className='contact' id='contact'>
       <div className='contact__cantainer'>
         <div className='contact__content'>
           <h4>Quote Company</h4>

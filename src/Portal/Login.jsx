@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { nanoid } from 'nanoid';
 import BasicModal from './Modal'
 // import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -38,6 +39,7 @@ function Login() {
     }
     // const dbref = collection(firestore, "login");
 
+    
     const sudmitData = (event) => {
         event.preventDefault();
         if (RegistrationInput.email === "kazim222@gmail.com") {
@@ -76,12 +78,15 @@ function Login() {
         //     }
         // }
         let book = {
+            id: nanoid(),
             firstName: RegistrationInput.firstName,
             allottedId: RegistrationInput.allottedId,
             email: RegistrationInput.email,
             password: RegistrationInput.password,
         }
-        setBooks([...books, book])
+        // setBooks([...books, book])
+        const newContact = [...books, book]
+        setBooks(newContact)
         console.log(books)
         const { allottedId, email, password } = RegistrationInput;
         if (allottedId === '') {

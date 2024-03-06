@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import '../AdminPanal/About.css'
 import Box from '@mui/material/Box';
 import Table from 'react-bootstrap/Table';
@@ -7,12 +7,18 @@ import Button from 'react-bootstrap/Button'
 import PermanentDrawerLeft from './Drawers'
 import { useNavigate } from 'react-router-dom';
 import Error from './Error';
+import ReadOnlyRow from '../Portal/ReadOnlyRow';
+import EditTableRow from './EditTableRow';
 
 
 function About() {
     const [loginData, setLoginData] = useState([]);
-    const [editValue, setEditValue] = useState(null);
-    const [editBox, setEditBox] = useState(false);
+    const [editContactId, setEditContactId] = useState(null);
+    const [editFormData, setEditFormData] = useState({
+        name: '',
+        allottedId: '',
+        email: '',
+    });
     const [input, setInput] = useState('');
     const [show, setShow] = useState(false);
     var todayDate = new Date().toISOString().slice(0, 10);
@@ -44,18 +50,67 @@ function About() {
         }
     }
 
-    const userlogout = () => {
-        localStorage.removeItem("book")
-        navigate("/login");
+    let name, value;
+    const handleEditFormChange = (event) => {
+        event.preventDefault()
+
+        name = event.target.name;
+        value = event.target.value;
+
+        const newFormData = { ...editFormData };
+        newFormData[name] = value;
+
+        setEditFormData(newFormData);
+    }
+    const handleEditFormSubmit = (event) => {
+        event.preventDefault()
+
+        const editedContact = {
+            id: editContactId,
+            name: editFormData.name,
+            allottedId: editFormData.allottedId,
+            email: editFormData.email,
+        }
+        const newContact = [...loginData];
+        const index = loginData.findIndex((contact) => contact.id === editContactId);
+        newContact[index] = editedContact;
+        setLoginData(newContact);
+        setEditContactId(null);
     }
 
-    const edit = (val) => {
-        console.log(val)
-        setEditValue(val)
-        // setEditBox(true)
-        // navigate('/editpage')
-        console.log(editValue)
+    const handleEditCancel = () => {
+        setEditContactId(null)
     }
+
+    const handleDeleteClick = (contacts) => {
+        const newContact = [...loginData]
+
+        const index = loginData.findIndex((contact) => contact.id === contacts);
+        newContact.splice(index, 0);
+        setLoginData(newContact);
+        console.log(newContact.splice(index, 1))
+    }
+
+
+    const handleEditClick = (event, contact) => {
+        event.preventDefault()
+        setEditContactId(contact.id)
+
+        const formValues = {
+            name: contact.name,
+            allottedId: contact.allottedId,
+            email: contact.email,
+        }
+
+        setEditFormData(formValues);
+    }
+
+    // const userlogout = () => {
+    //     localStorage.removeItem("book")
+    //     navigate("/login");
+    // }
+
+
 
     const searchText = (event) => {
         setInput(event.target.value)
@@ -87,33 +142,38 @@ function About() {
                                     </div>
                                     <input type="number" placeholder='Enter Your Emploment' value={input} onChange={searchText.bind(this)} name="" id="" />
                                 </div>
-                                <Table striped bordered hover className='user__table'>
-                                    <thead>
-                                        <tr>
-                                            <th>First Name</th>
-                                            <th>Allotted Id</th>
-                                            <th>Email</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            datasearch.map((el, k) => {
-                                                // let { firstName } = el
-                                                return (
-                                                    <>
-                                                        <tr key={k}>
-                                                            <td>{el.firstName}</td>
-                                                            <td>{el.allottedId}</td>
-                                                            <td>{el.email}</td>
-                                                            <td className='action'><button onClick={() => edit(k)}><i className="ri-pencil-line"></i></button><button onClick={userlogout}><i className="ri-delete-bin-6-line"></i></button></td>
-                                                        </tr>
-                                                    </>
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </Table>
+                                <form onSubmit={handleEditFormSubmit}>
+                                    <Table striped bordered hover className='user__table'>
+                                        <thead>
+                                            <tr>
+                                                <th>First Name</th>
+                                                <th>Allotted Id</th>
+                                                <th>Email</th>
+                                                <th>Action</th>
+                                                {/* <th>Salary</th> */}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                datasearch.map((el, k) => {
+                                                    // let { firstName } = el
+                                                    return (
+                                                        <Fragment key={k}>
+                                                            {editContactId === el.id ? (
+                                                                <>
+                                                                    <EditTableRow editFormData={editFormData} handleEditFormChange={handleEditFormChange} handleEditCancel={handleEditCancel} />
+                                                                </>
+                                                            ) : (
+                                                                <ReadOnlyRow contact={el} index={k} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick} />
+                                                            )}
+
+                                                        </Fragment>
+                                                    )
+                                                })
+                                            }
+                                        </tbody>
+                                    </Table>
+                                </form>
                             </div>
                         </Box>
                     </Box>
