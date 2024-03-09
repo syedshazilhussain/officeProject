@@ -17,6 +17,7 @@ import About from './AdminPanal/About';
 import Error from './AdminPanal/Error';
 import EditPage from './AdminPanal/EditPage';
 import Portfolio from './Portfolio/Portfolio';
+import Contacts from './Contacts/Contacts';
 // import PersistentDrawerLeft from './AdminPanal/Drawers';
 
 function App() {
@@ -66,14 +67,15 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Services' element={<Services />} />
         <Route path='/portal/*' element={<Portal />} />
-        <Route path='aboutUs' element={<Abouts />}/>
-        <Route path='/portfolio' element={<Portfolio/>}/>
+        <Route path='aboutUs' element={<Abouts />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/contactus' element={<Contacts />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Drawers' element={<PermanentDrawerLeft />} />
-        <Route path='/inbox' element={<Inbox/>}/>
-        <Route path='/about' element={<About/>}/>
+        <Route path='/inbox' element={<Inbox />} />
+        <Route path='/about' element={<About />} />
         {/* <Route path='/editpage' element={<EditPage/>}/> */}
-        <Route path='*' element={<Error/>}/>
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
 

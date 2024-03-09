@@ -25,7 +25,7 @@ function Portfolio() {
     }, [])
 
     const gallery__filter = (itemData) => {
-        const filterData = GalleryData.filter((item) => item.tittl == itemData);
+        const filterData = GalleryData.filter((item) => item.tittl === itemData);
         setData(filterData);
     }
 
@@ -51,7 +51,9 @@ function Portfolio() {
                 {
                     data.map((item, index) => {
                         return (
+                            // <div className='filter__img'>
                                 <img key={index} src={item.img} />
+                            // </div>
                         )
                     })
                 }

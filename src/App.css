@@ -6,6 +6,7 @@
 body {
   /* overflow-x: hidden; */
   /* width: calc(100vw - 100%); */
+  scroll-behavior: smooth;  
 }
 
 :root {
