@@ -5,7 +5,7 @@ import { slider } from './images'
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs'
 import IMG1 from '../img/mountain1.png'
 import IMG2 from '../img/mountain2.png'
-import IMG3 from '../img/text.png'
+import IMG3 from '../img/modern-office-space-with-desktops-with-modern-computers-created-with-generative-ai-technology.jpg'
 
 
 
@@ -21,9 +21,18 @@ function Intro() {
   //   setSlide(slide === 0 ? slider.length - 1 : slide - 1)
   // }
 
-    const handleScroll = () => setOffsetY(window.pageYOffset);
-    window.addEventListener('scroll', handleScroll);
-    // return () => window.removeEventListener('scroll', handleScroll);
+  // const handleScroll = () => setOffsetY(window.pageYOffset);
+  // window.addEventListener('scroll', handleScroll);
+  // return () => window.removeEventListener('scroll', handleScroll);
+
+  const img = document.querySelector('intro__header img')
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      // console.log((window.screenY / 500) + 1)
+      let value = (window.scrollY / 500) + 1
+      // img.style.tranform = `scale(${value})`;
+    })
+  }, [])
 
   return (
     <div className='intro__header'>
@@ -42,10 +51,12 @@ function Intro() {
               })}
             </span>
           </div> */}
+      <img src={IMG3} alt="" />
       <div className='zoom'>
-        <img src={IMG1} alt="" id='img1' style={{width: (100 + offsetY * 0.3) + "%"}} />
-        <img src={IMG2} alt="" id='img2' style={{width: (100 + offsetY * 0.3) + "%"}}  />
-        <img src={IMG3} alt="" id='img3' style={{top: `-${10 + offsetY +  0.3 + '%'}`}} />
+        {/* <img src={IMG1} alt="" id='img1' style={{width: (100 + offsetY * 0.3) + "%"}} /> */}
+        {/* <img src={IMG2} alt="" id='img2' style={{width: (100 + offsetY * 0.3) + "%"}}  /> */}
+        {/* <img src={IMG3} alt="" id='img3' style={{top: `-${10 + offsetY +  0.9 + '%'}`}} /> */}
+        <h2 id='text' style={{ top: `-${5 + offsetY + 0.9 + '%'}` }}>Welcome to Operify</h2>
       </div>
     </div>
   )

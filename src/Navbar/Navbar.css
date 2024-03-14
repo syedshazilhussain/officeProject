@@ -15,7 +15,6 @@
     top: 0;
     left: 0;
     margin-top: -3em;
-    border-bottom: 2px solid black;
     z-index: 1;
 }
 
@@ -61,6 +60,11 @@
 }
 
 .website__links .website__ul li {
+    height: 6vh;
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1em;
     font-weight: 700;
     font-family: Roboto, sans-serif;
@@ -68,7 +72,10 @@
 }
 
 .website__links ul li:hover {
-    color: #3B38EB;
+    transform: scale(1);
+    color: #fff;
+    background-color: #3B38EB;
+    border-radius: 20px;
     transition: .4s;
 
 }

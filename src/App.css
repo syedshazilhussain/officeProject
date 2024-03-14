@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  /* overflow-x: hidden; */
-  /* width: calc(100vw - 100%); */
+  overflow-x: hidden;
   scroll-behavior: smooth;  
 }
 

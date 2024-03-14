@@ -5,15 +5,14 @@ import AboutCompany from '../Home/About__Company/AboutCompany'
 import Portfolio from '../Home/Portfolio/Portfolio'
 import Contacts from './Contact/Contact'
 
-
 function Home() {
   return (
     <section className='home'>
-       <Intro/>
-       <Cards/>
-       <AboutCompany/>
-       <Portfolio/>
-       <Contacts/>
+      <Intro />
+      {/* <Cards/> */}
+      <AboutCompany />
+      <Portfolio />
+      <Contacts />
     </section>
   )
 }

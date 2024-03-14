@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Portfolio/Portfolio.css'
 import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Portfolio() {
+    useEffect(() => {
+        AOS.init()
+    })
     return (
-        <div className='Portfolio'>
+        <div className='Portfolio' data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="50">
             <div className='Portfolio__cantainer'>
                 <div className='portfolio__inner'>
                     <div className='portfolio__content'>

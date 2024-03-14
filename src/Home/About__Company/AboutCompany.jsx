@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../About__Company/AboutCompany.css'
 import about2__img1 from '../../img/about2-img1.webp'
 import about2__img2 from '../../img/about2-img2.webp'
 import about2__img3 from '../../img/about2-img3.webp'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function AboutCompany() {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <div className='about__campany'>
             <div className="about__campany__cantainer">
-                <div className="about__campany__inner">
+                <div className="about__campany__inner" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="50">
                     <div className='underline__box'>
                         <div className="underline"></div>
                         <h3>About Company</h3>
@@ -45,10 +50,10 @@ function AboutCompany() {
                         </div>
                     </div>
                 </div>
-                <div className="about__campany__inner2">
+                <div className="about__campany__inner2" data-aos="fade-left" data-aos-duration="3000" data-aos-delay="50">
                     <div className='about__campany__right__img'>
                         <img className='about2__img2' src={about2__img2} alt="" />
-                        <img className='about2__img3' src={about2__img3} alt="" />
+                        {/* <img className='about2__img3' src={about2__img3} alt="" /> */}
                     </div>
                 </div>
             </div>

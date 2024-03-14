@@ -15,9 +15,11 @@ import PermanentDrawerLeft from './AdminPanal/Drawers';
 import Inbox from './AdminPanal/Inbox';
 import About from './AdminPanal/About';
 import Error from './AdminPanal/Error';
-import EditPage from './AdminPanal/EditPage';
+// import EditPage from './AdminPanal/EditPage';
 import Portfolio from './Portfolio/Portfolio';
 import Contacts from './Contacts/Contacts';
+import Oceanrender from './Home/oceanrender';
+import Extra from './Home/extra';
 // import PersistentDrawerLeft from './AdminPanal/Drawers';
 
 function App() {
@@ -74,7 +76,7 @@ function App() {
         <Route path='/Drawers' element={<PermanentDrawerLeft />} />
         <Route path='/inbox' element={<Inbox />} />
         <Route path='/about' element={<About />} />
-        {/* <Route path='/editpage' element={<EditPage/>}/> */}
+        <Route path='/three' element={<Extra/>}/>
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

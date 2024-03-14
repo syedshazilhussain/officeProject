@@ -11,8 +11,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    overflow: scroll;
-    margin-top: 8rem;
+    margin-top: -10rem;
 }
 .image-container img {
     width: 24vw;
@@ -45,7 +44,7 @@
 
 .Portfolio {
     position: relative;
-    height: 100vh;
+    height: 190vh;
     width: 100vw;
     display: flex;
     gap: 1rem;
@@ -53,25 +52,4 @@
     align-items: center;
     justify-content: center;
     background: none;
-    /* padding: 20px 10%; */
-    margin-top: 6.1rem;
-}
-.buttons {
-    position: absolute;
-    top: 40px;
-    /* padding: 30px; */
-}
-.buttons button {
-    color: #fff;
-    background-color: #6E56B5;
-    font-size: 20px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 15px 30px;
-    margin-right: 20px;
-}
-.filter__img {
-    border: 2px solid red;
 }

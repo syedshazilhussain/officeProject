@@ -210,7 +210,6 @@ section {
 }
 
 .about-section .image-column .text-layer {
-    position: absolute;
     right: -110px;
     top: 50%;
     font-size: 325px;
@@ -227,7 +226,6 @@ section {
 }
 
 .about-section .image-column .inner-column .author-desc {
-    position: absolute;
     bottom: 16px;
     background: orange;
     padding: 10px 15px;

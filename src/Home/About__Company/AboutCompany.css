@@ -5,7 +5,7 @@
 }
 
 .about__campany {
-    margin-top: 14.9rem;
+    margin-top: 30rem;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -145,19 +145,11 @@
 .about__campany__right__img {
     width: 40vw;
     height: 100vh;
-    position: relative;
 }
 
 .about__campany__right__img .about2__img2 {
-    width: 40vw;
+    width: 44vw;
     height: 100vh;
-    position: relative;
-}
-
-.about__campany__right__img .about2__img3 {
-    position: absolute;
-    bottom: 2.5em;
-    left: 12em;
 }
 
 .skill__bars {

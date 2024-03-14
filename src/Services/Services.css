@@ -14,7 +14,7 @@
 .Services_img {
     position: relative;
     width: 100vw;
-    height: 75vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
 }
 .Services_img img {
     width: 100vw;
-    height: 75vh;
+    height: 87vh;
 }
 .Services__heading {
     position: absolute;
@@ -103,34 +103,61 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 .cards {
     height: 70vh;
     width: 20vw;
-    border-radius: 10px 10px 65px 0px;
+    border-radius: 30px 30px 65px 0px;
     box-shadow: 3px 5px 20px gray;
+}
+.cards:hover {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 0px 35px 32px -8px rgb(0, 0, 0, 0.75);
+    transition: transform 0.5s;
 }
 .cards img {
     width: 20vw;
     height: 30vh;
-    border-radius: 10px 10px 0px 0px;
+    transition: all 0.5s;
+    border-radius: 30px 30px 0px 0px;
 }
 .cards h3 {
     font-size: 1.5em;
     font-weight: 700;
     margin-top: 1.5rem;
     margin-left: 1.6rem;
+    transition: transform 0.5s;
 }
-.cards h3:hover {
+.cards:hover h3 {
     color: #600BD6;
     cursor: pointer;
+    transform: translate3d(0%, -50%, 100px);
+}
+.cards:hover h3::after, h3::before {
+    opacity: 1;
+}
+.cards:hover::after {
+    height: 120px;
+} 
+.cards:hover::before {
+    height: 120px;
+} 
+.cards:hover img {
+    opacity: 1;
+    transform: translate3d(0%, -30%, -100% );
+    transition: transform 0.5s;
 }
 .cards p {
     font-size: 1.2em;
     color: #2D495F;
     margin-top: 0.6rem;
     margin-left: 1.6rem;
+}
+.cards:hover p {
+    color: #2D495F;
+    cursor: pointer;
+    transform: translate3d(0%, -20%, 100px);
 }
 .cards .cards__link {
     text-decoration: underline;

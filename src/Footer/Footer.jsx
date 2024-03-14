@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import footer__logo from '../img/Oprify final-05.png'
 import '../Footer/Footer.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Footer() {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <div className='Footer'>
             <div className='footer__container'>

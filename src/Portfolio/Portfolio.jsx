@@ -31,12 +31,12 @@ function Portfolio() {
 
     return (
         <div className='Portfolio'>
-            <div className='buttons'>
+            {/* <div className='buttons'> */}
                 {/* <button>All</button>
                 <button>UL/UX</button>
                 <button>Design</button>
                 <button>Art</button> */}
-                <ul>
+                {/* <ul>
                     <li><button onClick={() => setData(GalleryData)}>All</button></li>
                     {
                         collection.map((item) => {
@@ -45,15 +45,13 @@ function Portfolio() {
                             )
                         })
                     }
-                </ul>
-            </div>
+                </ul> */}
+            {/* </div> */}
             <div className='image-container'>
                 {
                     data.map((item, index) => {
                         return (
-                            // <div className='filter__img'>
                                 <img key={index} src={item.img} />
-                            // </div>
                         )
                     })
                 }
