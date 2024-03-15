@@ -31,25 +31,6 @@ import IMG3 from '../img/modern-office-space-with-desktops-with-modern-computers
 function Intro() {
   const [offsetY, setOffsetY] = useState();
   // const [slide, setSlide] = useState(0);
-  const [span1, setSpan1] = useState(11);
-  const [span2, setSpan2] = useState(12);
-  const [span3, setSpan3] = useState(24);
-  const [span4, setSpan4] = useState(10);
-  const [span5, setSpan5] = useState(14);
-  const [span6, setSpan6] = useState(23);
-  const [span7, setSpan7] = useState(18);
-  const [span8, setSpan8] = useState(16);
-  const [span9, setSpan9] = useState(19);
-  const [span10, setSpan10] = useState(20);
-  const [span11, setSpan11] = useState(22);
-  const [span12, setSpan12] = useState(25);
-  const [span13, setSpan13] = useState(18);
-  const [span14, setSpan14] = useState(15);
-  const [span15, setSpan15] = useState(13);
-  const [span16, setSpan16] = useState(26);
-  const [span17, setSpan17] = useState(17);
-  const [span18, setSpan18] = useState(13);
-  const [span19, setSpan19] = useState(28);
 
   // const nextSlider = () => {
   //   setSlide(slide === slider.length - 1 ? 0 : slide + 1)
@@ -72,31 +53,31 @@ function Intro() {
   //     // img.style.tranform = `scale(${value})`;
   //   })
 
- 
+
 
   return (
     <div className='intro__header'>
       <div className='cantainer'></div>
       <div className='bubbles'>
-        <span style={span1}></span>
-        <span style={span2}></span>
-        <span style={span3}></span>
-        <span style={span4}></span>
-        <span style={span5}></span>
-        <span style={span6}></span>
-        <span style={span7}></span>
-        <span style={span8}></span>
-        <span style={span9}></span>
-        <span style={span10}></span>
-        <span style={span11}></span>
-        <span style={span12}></span>
-        <span style={span13}></span>
-        <span style={span14}></span>
-        <span style={span15}></span>
-        <span style={span16}></span>
-        <span style={span17}></span>
-        <span style={span18}></span>
-        <span style={span19}></span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
+        <span ></span>
       </div>
       {/* <Carousal data={slider}/> */}
       {/* <div className='carousal'>
@@ -115,10 +96,10 @@ function Intro() {
           </div> */}
       {/* <img src={IMG3} alt="" /> */}
       {/* <div className='zoom'> */}
-        {/* <img src={IMG1} alt="" id='img1' style={{width: (100 + offsetY * 0.3) + "%"}} /> */}
-        {/* <img src={IMG2} alt="" id='img2' style={{width: (100 + offsetY * 0.3) + "%"}}  /> */}
-        {/* <img src={IMG3} alt="" id='img3' style={{top: `-${10 + offsetY +  0.9 + '%'}`}} /> */}
-        {/* <h2 id='text' style={{ top: `-${5 + offsetY + 0.9 + '%'}` }}>Welcome to Operify</h2> */}
+      {/* <img src={IMG1} alt="" id='img1' style={{width: (100 + offsetY * 0.3) + "%"}} /> */}
+      {/* <img src={IMG2} alt="" id='img2' style={{width: (100 + offsetY * 0.3) + "%"}}  /> */}
+      {/* <img src={IMG3} alt="" id='img3' style={{top: `-${10 + offsetY +  0.9 + '%'}`}} /> */}
+      {/* <h2 id='text' style={{ top: `-${5 + offsetY + 0.9 + '%'}` }}>Welcome to Operify</h2> */}
       {/* </div> */}
     </div>
   )
