@@ -37,8 +37,8 @@ function Navbar() {
                 <div className='toggle' onClick={() => setOpenUl(!openUl)}>
                     <i className="ri-menu-line"></i>
                 </div>
-                <Link to='https://forms.visme.co/formsPlayer/4d7d0zpq-contact-us-page'>
-                {/* <Link to='/contactus'> */}
+                {/* <Link to='https://forms.visme.co/formsPlayer/4d7d0zpq-contact-us-page'> */}
+                <Link to='/contactus'>
                     {/* <a href="https://forms.visme.co/formsPlayer/q6p3opw9-contact-us"> */}
                         <div className='contact__btn'>
                             <button>Contact Us</button>

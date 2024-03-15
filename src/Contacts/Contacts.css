@@ -3,24 +3,371 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .Contacts {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
     display: flex;
-    gap: 1rem;
-    /* flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: center; */
-    /* background: none; */
-    /* padding: 20px 10%; */
-    margin-top: 6.1rem;
+    font-family: 'jost', sans-serif;
+    background: #0f0c29;
+    margin-top: 7rem;
     border: 2px solid black;
 }
-.visme_d {
-    border: 2px solid red;
-    height: 100vh;
-    width: 100vw;
+
+.main {
+    width: 30vw;
+    height: 80vh;
+    background: red;
+    background: url('../img/contactUs1.jpg') no-repeat center / cover;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
     display: flex;
-    /* position: relative; */
+    justify-content: center;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 40px;
+    background: #e0dede;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.signup .btn {
+    width: 60%;
+    height: 50px;
+    margin: 10px auto;
+    display: block;
+    justify-content: center;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.btn button {
+    width: 60%;
+    height: 50px;
+    margin: 10px auto;
+    display: block;
+    justify-content: center;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: -5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.signup .btn:hover {
+    background: #6444b8;
+}
+
+.btn button:hover {
+    background: #6444b8;
+}
+
+.login {
+    height: 60vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-245px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: #573b8a;
+    transform: scale(.6);
+}
+
+.login button {
+    width: 60%;
+    height: 50px;
+    margin: 10px auto;
+    display: block;
+    justify-content: center;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: -5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background: #6444b8;
+}
+
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
+}
+
+@media screen and (max-width: 382px) and (min-width: 200px) {
+    .Contacts {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'jost', sans-serif;
+        background: #0f0c29;
+        margin-top: 4.6rem;
+    }
+    .main {
+        width: 60vw;
+        height: 80vh;
+        background: url('../img/contactUs1.jpg') no-repeat center / cover;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 5px 20px 50px #000;
+    }
+    .login {
+        height: 72vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #eee;
+        border-radius: 60% / 10%;
+        transform: translateY(-190px);
+        transition: .8s ease-in-out;
+    }
+    label {
+        color: #000;
+        font-size: 1em;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+@media screen and (max-width: 600px) {
+    .Contacts {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'jost', sans-serif;
+        background: #0f0c29;
+        margin-top: 4.6rem;
+    }
+    .main {
+        width: 60vw;
+        height: 80vh;
+        background: url('../img/contactUs1.jpg') no-repeat center / cover;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 5px 20px 50px #000;
+    }
+    .login {
+        height: 72vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #eee;
+        border-radius: 60% / 10%;
+        transform: translateY(-205px);
+        transition: .8s ease-in-out;
+    }
+    label {
+        color: #fff;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+@media  screen and (max-width: 768px) and (min-width: 600px) {
+    .Contacts {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'jost', sans-serif;
+        background: #0f0c29;
+        margin-top: 4.6rem;
+    }
+    .main {
+        width: 60vw;
+        height: 80vh;
+        background: url('../img/contactUs1.jpg') no-repeat center / cover;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 5px 20px 50px #000;
+    }
+    .login {
+        height: 72vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #eee;
+        border-radius: 60% / 10%;
+        transform: translateY(-205px);
+        transition: .8s ease-in-out;
+    }
+    label {
+        color: #fff;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+@media  screen and (max-width: 992px) and (min-width: 768px) {
+    .Contacts {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'jost', sans-serif;
+        background: #0f0c29;
+        margin-top: 4.6rem;
+    }
+    .main {
+        width: 60vw;
+        height: 80vh;
+        background: url('../img/contactUs1.jpg') no-repeat center / cover;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 5px 20px 50px #000;
+    }
+    .login {
+        height: 72vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #eee;
+        border-radius: 60% / 10%;
+        transform: translateY(-205px);
+        transition: .8s ease-in-out;
+    }
+    label {
+        color: #fff;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
+}
+@media  screen and (max-width: 1200px) and (min-width: 992px) {
+    .Contacts {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'jost', sans-serif;
+        background: #0f0c29;
+        margin-top: 4.6rem;
+    }
+    .main {
+        width: 60vw;
+        height: 80vh;
+        background: url('../img/contactUs1.jpg') no-repeat center / cover;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 5px 20px 50px #000;
+    }
+    .login {
+        height: 72vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: #eee;
+        border-radius: 60% / 10%;
+        transform: translateY(-205px);
+        transition: .8s ease-in-out;
+    }
+    label {
+        color: #fff;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+    }
 }
