@@ -20,6 +20,9 @@ import Portfolio from './Portfolio/Portfolio';
 import Contacts from './Contacts/Contacts';
 import Oceanrender from './Home/oceanrender';
 import Extra from './Home/extra';
+import bodyAttachmentVideo from './video/homepagewwwweb.mp4'
+import AnimCursor from './AnimCursor';
+// import IMG3 from '../img/modern-office-space-with-desktops-with-modern-computers-created-with-generative-ai-technology.jpg'
 // import PersistentDrawerLeft from './AdminPanal/Drawers';
 
 function App() {
@@ -31,6 +34,8 @@ function App() {
   //     const preloader = document.querySelector('.text__div');
   //     preloader.classList.add('text-finish')
   //   })
+  
+
   return (
     <>
       <div className="preloader" id="preloading">
@@ -63,25 +68,32 @@ function App() {
           <span>Y</span>
         </h1> */}
       </div>
-      {/* <div className="main__section" id="main__sections"> */}
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Services' element={<Services />} />
-        <Route path='/portal/*' element={<Portal />} />
-        <Route path='aboutUs' element={<Abouts />} />
-        <Route path='/portfolio' element={<Portfolio />} />
-        <Route path='/contactus' element={<Contacts />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/Drawers' element={<PermanentDrawerLeft />} />
-        <Route path='/inbox' element={<Inbox />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/three' element={<Extra/>}/>
-        <Route path='*' element={<Error />} />
-      </Routes>
-      <Footer />
-
+      <div className="main__section" id="main__sections">
+        <div className='cursor__dot' data-cursor-dot></div>
+        <div className='cursor__outline' data-cursor-outline></div>
+        <AnimCursor/>
+      {/* <div> */}
+        <video autoPlay loop muted playsInline>
+          <source src={bodyAttachmentVideo} type='video/mp4' />
+        </video>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Services' element={<Services />} />
+            <Route path='/portal/*' element={<Portal />} />
+            <Route path='aboutUs' element={<Abouts />} />
+            <Route path='/portfolio' element={<Portfolio />} />
+            <Route path='/contactus' element={<Contacts />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/Drawers' element={<PermanentDrawerLeft />} />
+            <Route path='/inbox' element={<Inbox />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/three' element={<Extra />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+          <Footer />
       {/* </div> */}
+      </div>
     </>
   );
 }

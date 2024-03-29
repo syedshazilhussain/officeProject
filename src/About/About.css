@@ -52,7 +52,6 @@ section {
     padding: 60px 0;
     min-height: 200vh;
 }
-
 .sec-title {
     position: relative;
     /* z-index: 1; */
@@ -310,4 +309,29 @@ section {
 .about-section .image-column .video-link .link:hover {
     background-color: #191e34;
     color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .about-section {
+        height: 200vh;
+    }
+    .content-column {
+        margin-top: 7rem;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+    .about-section {
+        height: 200vh;
+    }
+    .content-column {
+        margin-top: 7rem;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .about-section {
+        height: 200vh;
+    }
+    .content-column {
+        margin-top: 7rem;
+    }
 }

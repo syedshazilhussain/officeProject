@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 
 function Portfolio() {
     useEffect(() => {
-        AOS.init()
+        AOS.init();
     })
     return (
         <div className='Portfolio' data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="50">

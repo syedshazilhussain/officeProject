@@ -4,7 +4,7 @@ import logo from '../img/Oprify final-04.png'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
-    const [openUl, setOpenUl] = useState(false)
+    const [openUl, setOpenUl] = useState(false);
 
     return (
         <div className="nav__header">
@@ -16,23 +16,33 @@ function Navbar() {
                     </Link>
                 </div>
                 <div className={openUl ? 'website__links Mobile__menu__links' : 'website__links'}>
-                    <ul className='website__ul'>
-                        <Link className='Links' to="/">
-                            <li>Home</li>
-                        </Link>
-                        <Link className='Links' to='/Portal'>
-                            <li>Portal</li>
-                        </Link>
-                        <Link className='Links' to='/Services'>
-                            <li>IT Services</li>
-                        </Link>
-                        <Link className='Links' to='/portfolio'>
-                            <li>Portfolio</li>
-                        </Link>
-                        <Link className='Links' to='/aboutUs'>
-                            <li>About Us</li>
-                        </Link>
-                    </ul>
+                    <div className='responsive__sideBar'>
+                        <div className='logo__1'>
+                            <img height={80} src={logo} alt="" />
+                        </div>
+                    </div>
+                    <div className='close' onClick={() => setOpenUl(!openUl)}>
+                        <i className="ri-close-fill"></i>
+                    </div>
+                    <div className='menu-bar-shadow'>
+                        <ul className='website__ul'>
+                            <Link className='Links' to="/">
+                                <li>Home</li>
+                            </Link>
+                            <Link className='Links' to='/Portal'>
+                                <li>Portal</li>
+                            </Link>
+                            <Link className='Links' to='/Services'>
+                                <li>IT Services</li>
+                            </Link>
+                            <Link className='Links' to='/portfolio'>
+                                <li>Portfolio</li>
+                            </Link>
+                            <Link className='Links' to='/aboutUs'>
+                                <li>About Us</li>
+                            </Link>
+                        </ul>
+                    </div>
                 </div>
                 <div className='toggle' onClick={() => setOpenUl(!openUl)}>
                     <i className="ri-menu-line"></i>
@@ -40,9 +50,9 @@ function Navbar() {
                 {/* <Link to='https://forms.visme.co/formsPlayer/4d7d0zpq-contact-us-page'> */}
                 <Link to='/contactus'>
                     {/* <a href="https://forms.visme.co/formsPlayer/q6p3opw9-contact-us"> */}
-                        <div className='contact__btn'>
-                            <button>Contact Us</button>
-                        </div>
+                    <div className='contact__btn'>
+                        <button>Contact Us</button>
+                    </div>
                     {/* </a> */}
                 </Link>
             </nav>

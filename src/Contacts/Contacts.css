@@ -11,15 +11,12 @@
     justify-content: center;
     align-items: center;
     font-family: 'jost', sans-serif;
-    background: #0f0c29;
-    margin-top: 7rem;
-    border: 2px solid black;
+    margin-top: 5rem;
 }
 
 .main {
     width: 30vw;
     height: 80vh;
-    background: red;
     background: url('../img/contactUs1.jpg') no-repeat center / cover;
     overflow: hidden;
     border-radius: 20px;

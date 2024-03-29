@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import './Contact.css'
-import bussiness__img from '../../img/contact-us-banner.jpg'
+import bussiness__img from '../../video/pexels-video-4169354-primary-w1280-h720.mp4'
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 
 function Contacts() {
   useEffect(() => {
-    Aos.init()
+    Aos.init();
   })
   return (
     <div className='contact' id='contact'>
@@ -37,7 +37,9 @@ function Contacts() {
           </div>
         </div>
         <div className='contact__content2' data-aos="flip-right" data-aos-duration="3000" data-aos-delay="50">
-          <img src={bussiness__img} alt="" />
+          <video autoPlay loop muted playsInline>
+            <source src={bussiness__img} type='video/mp4' />
+          </video>
         </div>
       </div>
     </div>

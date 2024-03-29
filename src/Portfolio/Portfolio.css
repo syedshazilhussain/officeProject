@@ -3,16 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-.Portfolio ul {
-    display: flex;
-    list-style: none;
-}
+
 .image-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    margin-top: -10rem;
+    margin-top: -20rem;
 }
+
 .image-container img {
     width: 24vw;
     height: 31vh;
@@ -22,21 +22,26 @@
     transition: 0.5s;
     cursor: pointer;
 }
+
 .image-container img:hover {
     border-radius: 20px;
     transform: scale(1.1);
     transition: 0.5s;
 }
+
 .image-container img.show {
     animation: animate 0.3s ease;
 }
+
 .image-container img.hide {
     display: none;
 }
+
 @keyframes animate {
     0% {
         transform: scale(0);
     }
+
     100% {
         transform: scale(1);
     }
@@ -52,4 +57,89 @@
     align-items: center;
     justify-content: center;
     background: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .Portfolio {
+        position: relative;
+        height: 280vh;
+        width: 100vw;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+    }
+    .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 45rem;
+    }
+}
+@media screen and (max-width: 600px) and (min-width: 300px) {
+    .Portfolio {
+        position: relative;
+        height: 200vh;
+        width: 100vw;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+    }
+    .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: -10rem;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+    .Portfolio {
+        position: relative;
+        height: 280vh;
+        width: 100vw;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+    }
+    .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 45rem;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .Portfolio {
+        position: relative;
+        height: 280vh;
+        width: 100vw;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+    }
+    .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 }

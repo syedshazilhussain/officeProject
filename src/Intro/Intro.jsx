@@ -57,27 +57,13 @@ function Intro() {
 
   return (
     <div className='intro__header'>
-      <div className='cantainer'></div>
-      <div className='bubbles'>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span> </span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
-        <span ></span>
+      <div className='cantainer'>
+        <h1>Hey<span>!</span></h1>
+        <p>Experience seamless customer service like never before with our state-of-the-art call center solutions. Our dedicated team of trained professionals ensures swift resolution to your queries, round-the-clock. Whether you need technical assistance, product information, or simply want to share your feedback, we're here to listen and assist you every step of the way. Trust in our commitment to excellence and let us elevate your customer service experience today.</p>
+        <button>Hire Me</button>
+      </div>
+      <div className='intro__img'>
+        {/* <img src={IMG3} alt="" /> */}
       </div>
       {/* <Carousal data={slider}/> */}
       {/* <div className='carousal'>

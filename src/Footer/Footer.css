@@ -16,6 +16,7 @@ body {
     align-items: center;
     background-color: #0D1625;
     margin-top: -3.5rem;
+    z-index: 1;
 }
 
 .footer__container {
@@ -33,7 +34,7 @@ body {
     width: 90vw;
     display: flex;
     gap: 2em;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -160,6 +161,7 @@ body {
 .footer__contact {
     width: 13vw;
     display: flex;
+    flex-direction: column;
 }
 
 .footer__logo4 {
@@ -230,7 +232,7 @@ body {
 @media screen and (max-width: 768px) {
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 
@@ -332,7 +334,7 @@ body {
 @media screen and (max-width: 600px) {
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 
@@ -434,7 +436,7 @@ body {
 @media screen and (max-width: 429px) {
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 
@@ -536,7 +538,7 @@ body {
 @media screen and (max-width: 300px) {
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 
@@ -647,7 +649,7 @@ body {
 
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 
@@ -767,7 +769,7 @@ body {
 
     .Footer {
         height: 250vh;
-        width: 112.5vw;
+        width: 100vw;
         border: 2px solid #000;
     }
 

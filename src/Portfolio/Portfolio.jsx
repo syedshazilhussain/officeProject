@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import '../Portfolio/Portfolio.css'
 import { GalleryData } from './GalleryData'
+import { Link } from 'react-router-dom';
+import portfolio__video from '../video/pexels-video-18069701-primary-w1280-h720.mp4'
 
 function Portfolio() {
     const [data, setData] = useState([])
-    const [collection, setCollection] = useState([])
+    const [collection, setCollection] = useState([]);
     // const button = document.querySelectorAll('button')
     // const gallery = document.querySelectorAll('img')
 
@@ -30,33 +32,24 @@ function Portfolio() {
     }
 
     return (
-        <div className='Portfolio'>
-            {/* <div className='buttons'> */}
-                {/* <button>All</button>
-                <button>UL/UX</button>
-                <button>Design</button>
-                <button>Art</button> */}
-                {/* <ul>
-                    <li><button onClick={() => setData(GalleryData)}>All</button></li>
+        <>
+            <video autoPlay loop muted playsInline>
+                <source src={portfolio__video} type='video/mp4' />
+            </video>
+            <div className='Portfolio'>
+                <div className='image-container'>
                     {
-                        collection.map((item) => {
+                        data.map((item, index) => {
                             return (
-                                <li><button onClick={() => { gallery__filter(item) }}>{item}</button></li>
+                                <Link to={item.link}>
+                                    <img key={index} src={item.img} />
+                                </Link>
                             )
                         })
                     }
-                </ul> */}
-            {/* </div> */}
-            <div className='image-container'>
-                {
-                    data.map((item, index) => {
-                        return (
-                                <img key={index} src={item.img} />
-                        )
-                    })
-                }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
